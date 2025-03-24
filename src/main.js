@@ -60,6 +60,9 @@ currentPage = 1;
     if (totalPages > currentPage) {
       loadMore.classList.remove("visually-hidden");
         }
+    else {
+         loadMore.classList.add("visually-hidden");
+        }
         scrollDown();
     } catch (error) {
         iziToast.error({
@@ -81,7 +84,7 @@ async function onLoadMoreClick() {
 
     try {
        const {images} = await fetchImages(searchQuery, currentPage);
-        showImages(images, gallery);
+        showImages(images, gallery, true);
         loader.style.visibility = 'hidden';
 
         if (currentPage >= totalPages) {

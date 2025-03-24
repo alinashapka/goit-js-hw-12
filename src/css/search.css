@@ -107,19 +107,16 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.span-loader {
   margin: 0 auto;
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  display: inline-block;
   border-top: 4px solid #fff;
   border-right: 4px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
-.span-loader::after {
+.loader::after {
   content: '';
   box-sizing: border-box;
   position: absolute;

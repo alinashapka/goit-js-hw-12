@@ -6,7 +6,11 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 let lightbox;
 
-export function showImages(images, gallery) {
+export function showImages(images, gallery, showGallery = false) {
+  if (!showGallery) {
+    gallery.innerHTML = '';
+  }
+  
     if (images.length === 0) {
         iziToast.error({
             position: 'topRight',
