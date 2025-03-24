@@ -7,8 +7,6 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 let lightbox;
 
 export function showImages(images, gallery) {
-    gallery.innerHTML = '';
-
     if (images.length === 0) {
         iziToast.error({
             position: 'topRight',
@@ -35,7 +33,8 @@ export function showImages(images, gallery) {
     `;
     }).join("");
 
-    gallery.innerHTML = imageCard;
+
+  gallery.insertAdjacentHTML("beforeend", imageCard);
 
 
     if (!lightbox) {
